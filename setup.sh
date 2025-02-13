@@ -46,7 +46,7 @@ FONT_DIR="$HOME/.local/share/fonts"
 mkdir -p "$FONT_DIR"
 if [ ! -f "$FONT_DIR/JetBrainsMonoNerdFont-Regular.ttf" ]; then
     msg_info "Installing JetBrains Mono Nerd Font..."
-    wget -q --show-progress "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip" -O /tmp/JetBrainsMono.zip
+    wget -q --show-progress "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip" -O /tmp/JetBrainsMono.zip
     unzip -o /tmp/JetBrainsMono.zip -d "$FONT_DIR"
     fc-cache -fv
     msg_success "JetBrains Mono Nerd Font installed."
@@ -61,6 +61,7 @@ msg_info "Setting up Zsh..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     msg_info "Installing Oh My Zsh..."
     export KEEP_ZSHRC=yes
+    export OHMYZSH_SKIP_ZSHRC=1
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
